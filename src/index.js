@@ -1,6 +1,6 @@
 module.exports = {
-  Text: require('./types/text'),
-  Integer: require('./types/integer'),
-  Record: require('./record'),
+  text: require('./types/text'),
+  integer: require('./types/integer'),
+  record: require('./record'),
   field: require('./ui/field'),
 };

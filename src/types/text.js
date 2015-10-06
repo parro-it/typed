@@ -1,14 +1,14 @@
 'use strict';
-const T = require("typed-immutable")
+const T = require('typed-immutable');
 
 const Text = (size, label) => {
-  const NewType = T.Typed(`Text(${size})`, value => {
+  const NewType = new T.Typed(`Text(${size})`, value => {
     if (typeof(value) !== 'string') {
-      return TypeError(`"${value}" is not a string`);
+      return new TypeError(`"${value}" is not a string`);
     }
 
     if (value.size > size) {
-      return TypeError(`"${value}" length is greater than ${size}`);
+      return new TypeError(`"${value}" length is greater than ${size}`);
     }
 
     return value;

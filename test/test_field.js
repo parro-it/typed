@@ -3,17 +3,16 @@
 const test = require('tape-async');
 const typed = require('..');
 
-const Person = typed.Record({
+const Person = typed.record({
 
-  name: typed.Text(5),
-  surname: typed.Text(5,'Given')
+  name: typed.text(5),
+  surname: typed.text(5, 'Given')
 
 }, 'Person');
 
 test('render bootstrap field group without instance', function *(t) {
-
   const vd = typed.field(Person.props.surname);
-  const id = vd.children[1].attributes.id
+  const id = vd.children[1].attributes.id;
   t.deepEqual(vd, {
     attributes: { class: 'form-group' },
     children: [
@@ -38,6 +37,4 @@ test('render bootstrap field group without instance', function *(t) {
     ],
     type: 'div'
   });
-
-
 });

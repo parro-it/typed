@@ -3,15 +3,15 @@
 const test = require('tape-async');
 const typed = require('..');
 
-const Person = typed.Record({
+const Person = typed.record({
 
-  name: typed.Text(5),
-  surname: typed.Text(5,'Given')
+  name: typed.text(5),
+  surname: typed.text(5, 'Given')
 
 }, 'Person');
 
 test('Types could be instantiated', function *(t) {
-  const result = new Person({name: 'c', surname:'g'});
+  const result = new Person({name: 'c', surname: 'g'});
 
   t.equal(result.name, 'c');
   t.equal(result.surname, 'g');
