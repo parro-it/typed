@@ -2,7 +2,7 @@
 
 type immutable xp
 
-[![Travis Build Status](https://img.shields.io/travis/andrea@parro.it/typed.svg)](http://travis-ci.org/parro-it/typed)
+[![Travis Build Status](https://img.shields.io/travis/parro-it/typed.svg)](http://travis-ci.org/parro-it/typed)
 [![NPM module](https://img.shields.io/npm/v/typed.svg)](https://npmjs.org/package/typed)
 [![NPM downloads](https://img.shields.io/npm/dt/typed.svg)](https://npmjs.org/package/rich-typed)
 
