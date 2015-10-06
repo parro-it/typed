@@ -28,7 +28,9 @@
     "stage": 4
   },
   "devDependencies": {
+    "bootstrap": "^3.3.5",
     "deku": "^0.5.6",
+    "insert-css": "^0.2.0",
     "tape-async": "^1.1.0"
   },
   "dependencies": {

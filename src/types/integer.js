@@ -27,6 +27,8 @@ const Integer = (min, max, label) => {
   NewType.max = max;
   NewType.digits = digits;
   NewType.label = label;
+  NewType.type = 'Integer';
+
   return NewType;
 };
 

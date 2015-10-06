@@ -4,8 +4,9 @@ const test = require('tape-async');
 const field = require('../src/ui/field');
 const element = require('virtual-element');
 const deku = require('deku');
-
+const fs = require('fs');
 const Person = require('./fixtures/person');
+const insertCss = require('insert-css');
 
 const createForm = () => deku.tree(
   element('form', {class: 'form-horizontal'}, [
@@ -18,7 +19,18 @@ const createForm = () => deku.tree(
 if (global.collider) {
   global.createField = () => {
     const app = createForm();
-    deku.render(app, document.body);
+    const bootstrap = fs.readFileSync(`${__dirname}/../node_modules/bootstrap/dist/css/bootstrap.css`);
+    insertCss(bootstrap);
+    document.body.innerHTML = `
+    <div class="container-fluid">
+      <div class="row">
+        <main class="col-md-3 col-md-offset-3">
+        </main>
+      </div>
+    </div>`;
+    setTimeout(() => {
+      deku.render(app, document.body.querySelector('main'));
+    });
 
     global.collider.open();
   };

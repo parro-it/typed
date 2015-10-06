@@ -16,6 +16,7 @@ const Text = (size, label) => {
 
   NewType.size = size;
   NewType.label = label;
+  NewType.type = 'Text';
   return NewType;
 };
 
