@@ -1,0 +1,37 @@
+{
+  "name": "typed",
+  "description": "type immutable xp",
+  "repository": "https://github.com/andrea@parro.it/typed.git",
+  "bugs": {
+    "url": "https://github.com/andrea@parro.it/typed/issues"
+  },
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=4.1"
+  },
+  "author": "andrea@parro.it",
+  "scripts": {
+    "test": "test-node",
+    "debug": "debug",
+    "cover": "cover-node",
+    "watch": "watch-node",
+    "release-minor": "release-minor",
+    "release-patch": "release-patch",
+    "lint": "lint",
+    "prepublish": "check"
+  },
+  "eslintConfig": {
+    "extends": "devenv"
+  },
+  "babel": {
+    "stage": 4
+  },
+  "devDependencies": {
+    "tape-async": "*"
+  },
+  "dependencies": {
+    "typed-immutable": "0.0.7"
+  },
+  "license": "MIT"
+}
