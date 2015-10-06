@@ -1,9 +1,9 @@
 {
   "name": "rich-typed",
   "description": "type immutable xp",
-  "repository": "https://github.com/andrea@parro.it/typed.git",
+  "repository": "https://github.com/parro-it/typed.git",
   "bugs": {
-    "url": "https://github.com/andrea@parro.it/typed/issues"
+    "url": "https://github.com/parro-it/typed/issues"
   },
   "version": "0.0.2",
   "main": "src/index.js",
