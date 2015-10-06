@@ -1,31 +1,20 @@
 'use strict';
 
 const test = require('tape-async');
-const typed = require('..');
+const Person = require('./fixtures/person');
 
-const Person = typed.record({
-
-  name: typed.text(5),
-  surname: typed.text(5, 'Given')
-
-}, 'Person');
-
-test('Types could be instantiated', function *(t) {
-  const result = new Person({name: 'c', surname: 'g'});
-
-  t.equal(result.name, 'c');
-  t.equal(result.surname, 'g');
-});
-
-test('Constructors contains properties metadata', function *(t) {
+test('Field Metadata contains properties size', function *(t) {
   t.equal(Person.props.name.size, 5);
 });
 
-test('Constructors metadata contains properties label', function *(t) {
-  t.equal(Person.props.name.label, 'Name');
+test('Throw TypeError if string value length is greater than size', function *(t) {
+  t.plan(2);
+  return new Promise(()=>{
+    return new Person({name: '123456', surname: 'g', age: 12});
+  }).catch(err => {
+    t.equal(err.constructor.name, 'TypeError');
+    t.equal(err.message, 'Invalid value for "name" field:\n "123456" length is more than 5 characters.');
+  });
 });
 
-test('Constructors metadata use custom field label if specified', function *(t) {
-  t.equal(Person.props.surname.label, 'Given');
-});
 

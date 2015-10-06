@@ -7,8 +7,8 @@ const Text = (size, label) => {
       return new TypeError(`"${value}" is not a string`);
     }
 
-    if (value.size > size) {
-      return new TypeError(`"${value}" length is greater than ${size}`);
+    if (value.length > size) {
+      return new TypeError(`"${value}" length is more than ${size} characters.`);
     }
 
     return value;

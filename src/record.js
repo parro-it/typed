@@ -9,6 +9,7 @@ module.exports = function Record(props) {
   Object.keys(r.props).forEach(key => {
     const prop = r.props[key];
     prop.label = prop.label || humanize(key);
+    prop.key = key;
   });
   return r;
 };

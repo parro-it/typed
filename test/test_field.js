@@ -1,17 +1,12 @@
 'use strict';
 
 const test = require('tape-async');
-const typed = require('..');
+const field = require('../src/ui/field');
 
-const Person = typed.record({
-
-  name: typed.text(5),
-  surname: typed.text(5, 'Given')
-
-}, 'Person');
+const Person = require('./fixtures/person');
 
 test('render bootstrap field group without instance', function *(t) {
-  const vd = typed.field(Person.props.surname);
+  const vd = field(Person.props.surname);
   const id = vd.children[1].attributes.id;
   t.deepEqual(vd, {
     attributes: { class: 'form-group' },
