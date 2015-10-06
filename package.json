@@ -28,7 +28,7 @@
     "stage": 4
   },
   "devDependencies": {
-    "tape-async": "*"
+    "tape-async": "^1.1.0"
   },
   "dependencies": {
     "inflection": "^1.7.1",
