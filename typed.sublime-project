@@ -3,6 +3,12 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/parro-it/Desktop/repos/collider"
+		},
+		{
+			"path": "/home/parro-it/Desktop/repos/tape-async"
 		}
 	]
 }

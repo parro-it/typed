@@ -3,6 +3,8 @@
 const test = require('tape-async');
 const Person = require('./fixtures/person');
 
+
+
 test('Field Metadata contains properties size', function *(t) {
   t.equal(Person.props.name.size, 5);
 });

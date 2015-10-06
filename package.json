@@ -28,6 +28,7 @@
     "stage": 4
   },
   "devDependencies": {
+    "deku": "^0.5.6",
     "tape-async": "^1.1.0"
   },
   "dependencies": {
