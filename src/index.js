@@ -1,3 +1,6 @@
-module.exports = function test4() {
-  return Promise.resolve(42);
+module.exports = {
+  Text: require('./types/text'),
+  Integer: require('./types/integer'),
+  Record: require('./record'),
+  field: require('./ui/field'),
 };

@@ -53,3 +53,6 @@ npm-debug.log
 private
 init
 
+
+.DS_Store
+
