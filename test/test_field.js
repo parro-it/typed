@@ -38,27 +38,35 @@ if (global.collider) {
 
 test('render bootstrap field group without instance', function *(t) {
   const vd = field(Person.props.surname);
-  const id = vd.children[1].attributes.id;
+  const id = vd.children[1].children[0].attributes.id;
   t.deepEqual(vd, {
     attributes: { class: 'form-group' },
     children: [
       {
         attributes: {
-          class: 'col-sm-2 control-label',
+          class: 'col-sm-3 control-label',
           for: id
         },
         children: [ 'Given' ],
         type: 'label'
       },
       {
-        attributes: {
-          class: 'form-control',
-          id: id,
-          type: 'text',
-          value: 'test'
-        },
-        children: [],
-        type: 'input'
+        attributes: { class: 'col-sm-9' },
+        children: [
+          {
+            attributes: {
+              name: 'surname',
+              class: 'form-control',
+              id: id,
+              type: 'text',
+              value: 'test',
+              maxlength: '5',
+            },
+            children: [],
+            type: 'input'
+          }
+        ],
+        type: 'div'
       }
     ],
     type: 'div'
@@ -74,19 +82,25 @@ test('render valid html', function *(t) {
   t.equal(html,
 `<form class="form-horizontal">
   <div class="form-group">
-    <label for="$id" class="col-sm-2 control-label">Given</label>
-    <input id="$id" type="text" value="test" class="form-control">
-    </input>
+    <label for="$id" class="col-sm-3 control-label">Given</label>
+    <div class="col-sm-9">
+      <input name="surname" id="$id" type="text" value="test" maxlength="5" class="form-control">
+      </input>
+    </div>
   </div>
   <div class="form-group">
-    <label for="$id" class="col-sm-2 control-label">Name</label>
-    <input id="$id" type="text" value="test" class="form-control">
-    </input>
+    <label for="$id" class="col-sm-3 control-label">Name</label>
+    <div class="col-sm-9">
+      <input name="name" id="$id" type="text" value="test" maxlength="5" class="form-control">
+      </input>
+    </div>
   </div>
   <div class="form-group">
-    <label for="$id" class="col-sm-2 control-label">Age</label>
-    <input id="$id" type="text" value="test" class="form-control">
-    </input>
+    <label for="$id" class="col-sm-3 control-label">Age</label>
+    <div class="col-sm-9">
+      <input name="age" id="$id" type="number" value="0" class="form-control">
+      </input>
+    </div>
   </div>
 </form>`.replace(/\n */g, ''));
 });
