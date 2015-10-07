@@ -4,7 +4,7 @@ const test = require('tape-async');
 const Person = require('./fixtures/person');
 
 test('Types could be instantiated', function *(t) {
-  const result = new Person({name: 'c', surname: 'g', age: 42});
+  const result = new Person({name: 'c', surname: 'g', age: 42, score:0});
 
   t.equal(result.name, 'c');
   t.equal(result.surname, 'g');

@@ -15,14 +15,40 @@ const fields = {
     class: theme.field
   }),
 
-  Integer: (prop, id) => element('input', {
-    name: prop.key,
-    id: id,
-    type: 'number',
-    value: '0',
-    // maxlength: String(prop.digits + (prop.min < 0 ? 1 : 0)),
-    class: theme.field
-  })
+  Integer: (prop, id) => {
+    const length = prop.digits + (prop.min < 0 ? 1 : 0);
+    return element('input', {
+      name: prop.key,
+      id: id,
+      type: 'text',
+      value: '0',
+      class: theme.field,
+      onInput(e) {
+        let v = e.target.value;
+
+        if (v > prop.max) {
+          v = String(prop.max);
+        }
+
+        if (v < prop.min) {
+          v = String(prop.min);
+        }
+
+
+        v = v.replace(/[^\d|\-]/g, '');
+
+        v = v.slice(0, length);
+
+        if (prop.min >= 0) {
+          v = v.replace(/\-/g, '');
+        }
+
+        if (v !== e.target.value) {
+          e.target.value = v;
+        }
+      }
+    });
+  }
 };
 
 const field = (prop) => {

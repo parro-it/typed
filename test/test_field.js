@@ -12,7 +12,8 @@ const createForm = () => deku.tree(
   element('form', {class: 'form-horizontal'}, [
     field(Person.props.surname),
     field(Person.props.name),
-    field(Person.props.age)
+    field(Person.props.age),
+    field(Person.props.score)
   ])
 );
 
@@ -98,7 +99,14 @@ test('render valid html', function *(t) {
   <div class="form-group">
     <label for="$id" class="col-sm-3 control-label">Age</label>
     <div class="col-sm-9">
-      <input name="age" id="$id" type="number" value="0" class="form-control">
+      <input name="age" id="$id" type="text" value="0" class="form-control">
+      </input>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="$id" class="col-sm-3 control-label">Score</label>
+    <div class="col-sm-9">
+      <input name="score" id="$id" type="text" value="0" class="form-control">
       </input>
     </div>
   </div>
