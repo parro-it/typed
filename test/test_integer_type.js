@@ -26,7 +26,7 @@ test('Fields metadata contains properties label', function *(t) {
 test('Throw TypeError if value is less than min', function *(t) {
   t.plan(2);
   return new Promise(()=>{
-    return new Person({name: '12345', surname: 'g', age: -12, score:0});
+    return new Person({name: '12345', surname: 'g', age: -12, score: 0});
   }).catch(err => {
     t.equal(err.constructor.name, 'TypeError');
     t.equal(err.message, 'Invalid value for "age" field:\n -12 is less than 0');
@@ -36,7 +36,7 @@ test('Throw TypeError if value is less than min', function *(t) {
 test('Throw TypeError if value is more than max', function *(t) {
   t.plan(2);
   return new Promise(()=>{
-    return new Person({name: '12345', surname: 'g', age: 120, score:0});
+    return new Person({name: '12345', surname: 'g', age: 120, score: 0});
   }).catch(err => {
     t.equal(err.constructor.name, 'TypeError');
     t.equal(err.message, 'Invalid value for "age" field:\n 120 is greater than 90');
@@ -44,6 +44,6 @@ test('Throw TypeError if value is more than max', function *(t) {
 });
 
 test('accepts values in range', function *(t) {
-  const p = new Person({name: '12345', surname: 'g', age: 12, score:0});
+  const p = new Person({name: '12345', surname: 'g', age: 12, score: 0});
   t.equal(p.age, 12);
 });
