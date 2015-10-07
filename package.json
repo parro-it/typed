@@ -36,6 +36,7 @@
   "dependencies": {
     "inflection": "^1.7.1",
     "node-uuid": "^1.4.3",
+    "tape-async": "^1.2.0",
     "typed-immutable": "0.0.7",
     "virtual-element": "^1.2.0"
   },

@@ -1,3 +1,4 @@
+
 module.exports = {
   text: require('./types/text'),
   integer: require('./types/integer'),
